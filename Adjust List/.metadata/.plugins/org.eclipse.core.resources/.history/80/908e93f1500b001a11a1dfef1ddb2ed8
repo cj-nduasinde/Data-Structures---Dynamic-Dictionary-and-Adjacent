@@ -1,0 +1,7 @@
+
+public class Node {
+
+	int vertex;
+	float weight;
+	Node next;
+}

@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class AdjacentList {
+	
+	
+	    public static void main(String[] args)
+	    {
+	        int vertices, edges, v1, v2; 
+	        Scanner in = new Scanner(System.in);
+	        
+	        System.out.print("Enter the number of vertices : ");
+	        vertices = in.nextInt();
+	        System.out.print("Enter the number of edges : ");
+	        edges = in.nextInt();
+	        
+	        // Creating Adjacency List. Size is made |V| + 1 to
+	        // use the array by 1-indexing, for simplicity
+	        Node[] adjacencyList = new Node[vertices + 1];
+	        
+	        System.out.println("Enter " + edges + " edges. Two integers v1, v2, ");
+	        
+	        for (int i = 0; i < edges; ++i) {
+	            // Scanning edge v1 -> v2 
+	            v1 = in.nextInt();
+	            v2 = in.nextInt();
+	            
+	            
+	            // Adding edge v1 -> v2
+	            adjacencyList[v1] = insertEdge(adjacencyList[v1], new Node(v2));
+	            
+	            // To add edge v2 -> v1, uncomment line below
+	             //adjacencyList[v2] = addEdge(adjacencyList[v2],new Node (v1));
+	        }
+	        
+	        // Printing adjacency list
+	        print(adjacencyList);
+	        }
+	        
+	    public static Node insertEdge(Node oldHead, Node newEdge)
+	    {
+	        // Add the new node to the start of linked list
+	        newEdge.next = oldHead;
+	        
+	        return newEdge;
+		 
+		}
+	  
+	    
+
+	    
+
+
+		public static void print(Node[] adjacencyList)
+		    {
+		        for (int i = 1; i < adjacencyList.length; ++i) {
+		            Node trav = adjacencyList[i];
+		            
+		            System.out.print("adjacencyList[" + i + "] -> ");
+		            
+		            while (trav != null) {
+		                System.out.print(trav.vertex + " -> " );
+		                trav = trav.next;
+		            }
+		            
+		            System.out.println("NULL");
+		            System .out.println(trav.vertex);
+		            
+		           
+}
+		    }
+	    }

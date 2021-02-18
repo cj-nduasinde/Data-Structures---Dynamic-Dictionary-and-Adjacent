@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class PriorityQUsingSortredArrayTest {
+	
+	
+
+	
+	
+		public static void main(String args[])
+		{
+			int n, position;
+			int key;
+			int item;
+			
+			/* Create an empty array with a space for 200 items */
+			PriorityQUsingSortedArrayClass pqArr = new PriorityQUsingSortedArrayClass(); 
+			
+			/* insert n items to the empty array */
+			System.out.println("Enter the number of items to insert:");
+			n = Integer.parseInt(new Scanner(System.in).nextLine());
+			System.out.printf("Enter %1$s items" + "\r\n", n);
+			for (int i = 0; i < n; i++)
+			{
+				item = Integer.parseInt(new Scanner(System.in).nextLine());
+				pqArr.insert(item);
+			};
+		    System.out.println("Display all items from index 0:");
+			pqArr.display();
+			
+			/* Test the operations */
+			System.out.println("Enter 1 for extracting the maximum element, 2 for Insert ");
+			int s = Integer.parseInt(new Scanner(System.in).nextLine());
+			while (s == 1 || s == 2)
+			{
+				if (s == 1)
+				{
+					int max = pqArr.extract();
+					if (max != -999999)
+					{
+						System.out.println("The extracted maximum element is:");
+						System.out.println(pqArr.extract());
+						System.out.println("The elements in the array after extraction:");
+						pqArr.display();
+					};
+				};
+				if (s == 2)
+				{
+					System.out.println("Insert a new item to the Array:");
+					int newItem = Integer.parseInt(new Scanner(System.in).nextLine());
+				    pqArr.insert(newItem);
+					System.out.println("The elements in the array after insertion:");
+					pqArr.display();
+				};
+				System.out.println("Enter 1 for extractMax, 2 for Array Insert");
+				s = Integer.parseInt(new Scanner(System.in).nextLine());
+			}
+	}
+
+}

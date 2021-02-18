@@ -1,0 +1,14 @@
+import java.io.Console;
+import java.util.LinkedList;
+
+public class AdjacentList {
+public AdjacentList() {
+	Console.Writeline("Give the number of verticles");
+	int graphSize= int.Parse(Console.ReadLine());
+	Node[]Adj = new Node[graphSize];
+	for (int i= 0; i<= graphSize - 1; i ++)
+		Adj[i]=null;
+}
+}
+
+

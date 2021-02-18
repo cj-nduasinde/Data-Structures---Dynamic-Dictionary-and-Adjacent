@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class AdjacentList {
+	
+	
+	    public static void main(String[] args)
+	    {
+	        int vertices, edges, v1, v2; 
+	        Scanner in = new Scanner(System.in);
+	        
+	        System.out.print("Enter the number of vertices - ");
+	        vertices = in.nextInt();
+	        System.out.print("Enter the number of edges - ");
+	        edges = in.nextInt();
+	        
+	        // Creating Adjacency List. Size is made |V| + 1 to
+	        // use the array by 1-indexing, for simplicity
+	        Node[] adjacencyList = new Node[vertices + 1];
+	        
+	        System.out.println("Enter " + edges + " edges. Three integers v1, v2, ");
+	        
+	        for (int i = 0; i < edges; ++i) {
+	            // Scanning edge v1 -> v2 of weight 'w'
+	            v1 = in.nextInt();
+	            v2 = in.nextInt();
+	            
+	            
+	            // Adding edge v1 -> v2
+	            adjacencyList[v1] = addEdge(adjacencyList[v1], new Node(v2));
+	            
+	            // To add edge v2 -> v1, uncomment line below
+	             adjacencyList[v2] = addEdge(adjacencyList[v2],new Node (v1));
+	        }
+	        
+	        // Printing adjacency list
+	        System.out.println(adjacencyList);
+	        
+	       
+	    }
+
+		private static Node addEdge(Node node, Node node2) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	        
+	    
+}
